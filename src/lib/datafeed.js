@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const Http = require('./http');
-const WebSocket = require('ws');
+// const WebSocket = require('ws');
 const EventEmitter = require('event-emitter');
 const EventAllOff = require('event-emitter/all-off');
 
@@ -303,9 +303,7 @@ class Datafeed {
     if (this._maxId > 1e8) {
       this._maxId = 0;
     }
-    const client = new WebSocket(url, {
-      handshakeTimeout: 30,
-    });
+    const client = new WebSocket(url);
     client._maxId = this._maxId;
     return client;
   }
