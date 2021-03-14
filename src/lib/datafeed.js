@@ -385,7 +385,7 @@ class Datafeed {
         this._clearPing();
 
         if (this.client) {
-          this.client.terminate();
+          this.client.close();
           this.client = null;
         }
       }, 5000);
